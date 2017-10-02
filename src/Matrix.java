@@ -82,7 +82,6 @@ public class Matrix {
     }
 
     public Matrix mul(Matrix other) {
-        assert getNumColumns() == other.getNumRows();
         float[][] result = new float[getNumRows()][other.getNumColumns()];
         for (int i = 0; i < getNumRows(); i++) {
             for (int j = 0; j < other.getNumColumns(); j++) {
@@ -117,7 +116,6 @@ public class Matrix {
     }
 
     public Triple<Matrix, Matrix, Matrix> getLU() {
-        assert getNumRows() == getNumColumns();
         Matrix copy = copy();
         Matrix perm = copy.decompose(0);
 
